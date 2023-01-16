@@ -1,7 +1,17 @@
-const App = ()=> {
-  return (
-    <div></div>
-  )
-}
+import { Container } from "./style";
+import Form from "./components/Form/";
+import InfoAside from "./components/InfoAside";
 
-export default App
+const App = () => {
+  return (
+    <>
+      <Container>
+        <h1>Simule sua Antecipação</h1>
+        <Form />
+      </Container>
+      <InfoAside />
+    </>
+  );
+};
+
+export default App;
