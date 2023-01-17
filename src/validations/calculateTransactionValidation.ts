@@ -15,7 +15,8 @@ const schema = yup.object().shape({
   mdr: yup
     .number()
     .transform((value) => (value ? value : undefined))
-    .min(0, "O percentual deve ser positivo")
+    .min(0, "Mínimo de 0%")
+    .max(100, "Máximo de 100%")
     .required("O percentual do MDR é obrigatório"),
 });
 
