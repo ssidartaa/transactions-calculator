@@ -1,6 +1,6 @@
 import { Container } from "./style";
 
-const Value = ({ info, value }: { info: string; value: string }) => {
+const Value = ({ info, value }: ITransactionValueProps) => {
   return (
     <Container>
       <i>

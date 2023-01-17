@@ -1,15 +1,41 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const Container = styled.div`
+import { IContainerProps } from "./interfaces";
+
+export const Container = styled.div<IContainerProps>`
   display: flex;
   flex-direction: column;
   color: var(--Color-2);
+
+  ${({ error }) => {
+    return error
+      ? css`
+          div {
+            label {
+              color: red;
+            }
+
+            input {
+              border-color: red;
+
+              :focus {
+                border-color: red;
+              }
+            }
+          }
+        `
+      : css`
+          span {
+            opacity: 0;
+          }
+        `;
+  }}
 
   div {
     display: flex;
     flex-direction: column;
 
-    p {
+    label {
       font-size: 0.8rem;
       margin-bottom: 5px;
     }
@@ -23,6 +49,14 @@ export const Container = styled.div`
       :focus {
         border-color: #66afe9;
       }
+    }
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+    input[type="number"] {
+      -moz-appearance: textfield;
     }
   }
 

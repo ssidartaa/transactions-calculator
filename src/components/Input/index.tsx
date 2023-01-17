@@ -1,21 +1,22 @@
 import { Container } from "./style";
+import { IInputProps } from "./interfaces";
+import { forwardRef, LegacyRef } from "react";
 
-const Input = ({
-  title,
-  description,
-}: {
-  title: string;
-  description?: string;
-}) => {
-  return (
-    <Container>
-      <div>
-        <p>{title}</p>
-        <input type="text" />
-      </div>
-      {description && <span className="description">{description}</span>}
-    </Container>
-  );
-};
+const Input = forwardRef(
+  (
+    { label, description, id, error, ...rest }: IInputProps,
+    ref: LegacyRef<HTMLInputElement>
+  ) => {
+    return (
+      <Container error={error}>
+        <div>
+          <label htmlFor={id}>{label}</label>
+          <input type="number" id={id} ref={ref} {...rest} />
+        </div>
+        <span>{error ? error : "a"}</span>
+      </Container>
+    );
+  }
+);
 
 export default Input;

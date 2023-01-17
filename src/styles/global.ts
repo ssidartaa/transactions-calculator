@@ -1,9 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 export const Global = createGlobalStyle`
-
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
-
     :root{
         --Background-color: #F2F2F2;
         --Color-1: #fff;
@@ -13,28 +10,28 @@ export const Global = createGlobalStyle`
         --Color-5: #5D9CEC;
     }
 
-html, body, div, main, section, p, h1, h2, ul, li, form, input, span, i, b {
-	margin: 0;
-	padding: 0;
-	border: none;
-	box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    outline: none;
-}
+    html, body, div, main, section, p, h1, h2, ul, li, form, input, span, i, b {
+        margin: 0;
+        padding: 0;
+        border: none;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+        outline: none;
+    }
 
-body {
-	background-color: var(--Background-color);
-    width: 100%;
-    height: 100vh;
-    font-family: 'Source Sans Pro', sans-serif;
-}
+    body {
+        background-color: var(--Background-color);
+        width: 100%;
+        height: 100vh;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
 
-#root {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 10px;
-}
+    #root {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+    }
 `;
