@@ -1,34 +1,18 @@
 import { useContext } from "react";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
 
 import Input from "../Input";
 
 import { TransactionValueContext } from "../../contexts/TransactionValueContext";
-import schema from "../../validations/calculateTransactionValidation";
-
-import { IHandleTransactionValuesProps } from "../../contexts/interfaces";
 
 import { Container } from "./style";
 
 const Form = () => {
-  const { handleTransactionValues } = useContext(TransactionValueContext);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<IHandleTransactionValuesProps>({
-    resolver: yupResolver(schema),
-    shouldFocusError: false,
-  });
-
-  const a = (data: any) => {
-    console.log(data);
-  };
+  const { errors, register, handleTransactionValues } = useContext(
+    TransactionValueContext
+  );
 
   return (
-    <Container onChange={handleSubmit(a)}>
+    <Container onChange={handleTransactionValues}>
       <Input
         label="Informe o valor da venda *"
         id="value"

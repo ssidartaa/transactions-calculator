@@ -1,4 +1,5 @@
-import { ReactNode } from "react";
+import { BaseSyntheticEvent, ReactNode } from "react";
+import { FieldErrorsImpl } from "react-hook-form";
 
 interface IProviderProps {
   children: ReactNode;
@@ -12,5 +13,7 @@ interface IHandleTransactionValuesProps {
 }
 
 interface ITransactionValueValues {
-  handleTransactionValues: (values: IHandleTransactionValuesProps) => void;
+  register: UseFormRegister<IHandleTransactionValuesProps>;
+  handleTransactionValues: (e: BaseSyntheticEvent) => Promise<void>;
+  errors: Partial<FieldErrorsImpl<IHandleTransactionValuesProps>>;
 }

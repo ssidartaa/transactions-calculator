@@ -1,11 +1,11 @@
 import { Container } from "./style";
 import { IInputProps } from "./interfaces";
-import { forwardRef, LegacyRef } from "react";
+import { forwardRef, ForwardedRef } from "react";
 
 const Input = forwardRef(
   (
     { label, description, id, error, ...rest }: IInputProps,
-    ref: LegacyRef<HTMLInputElement>
+    ref: ForwardedRef<HTMLInputElement>
   ) => {
     return (
       <Container error={error}>
