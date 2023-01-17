@@ -8,13 +8,13 @@ const Input = ({
   description?: string;
 }) => {
   return (
-    <>
-      <Container>
-        <span>{title}</span>
+    <Container>
+      <div>
+        <p>{title}</p>
         <input type="text" />
-      </Container>
+      </div>
       {description && <span className="description">{description}</span>}
-    </>
+    </Container>
   );
 };
 

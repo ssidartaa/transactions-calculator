@@ -3,10 +3,10 @@ import { Container } from "./style";
 const Value = ({ info, value }: { info: string; value: string }) => {
   return (
     <Container>
-      <p>
+      <i>
         {`${info}: `}
-        <span>{`R$ ${value}`}</span>
-      </p>
+        <b>{`R$ ${value}`}</b>
+      </i>
     </Container>
   );
 };

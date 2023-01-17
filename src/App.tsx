@@ -4,13 +4,13 @@ import InfoAside from "./components/InfoAside";
 
 const App = () => {
   return (
-    <>
-      <Container>
+    <Container>
+      <main>
         <h1>Simule sua Antecipação</h1>
         <Form />
-      </Container>
+      </main>
       <InfoAside />
-    </>
+    </Container>
   );
 };
 
