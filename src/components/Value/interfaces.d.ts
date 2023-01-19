@@ -1,4 +1,4 @@
 interface ITransactionValueProps {
   info: string;
-  value: string;
+  value: number;
 }

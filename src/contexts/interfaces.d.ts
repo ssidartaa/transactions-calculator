@@ -12,8 +12,16 @@ interface IHandleTransactionValuesProps {
   days?: string;
 }
 
+interface IResultValues {
+  1: number;
+  15: number;
+  30: number;
+  90: number;
+}
+
 interface ITransactionValueValues {
   register: UseFormRegister<IHandleTransactionValuesProps>;
   handleTransactionValues: (e: BaseSyntheticEvent) => Promise<void>;
   errors: Partial<FieldErrorsImpl<IHandleTransactionValuesProps>>;
+  result: IResultValues;
 }
