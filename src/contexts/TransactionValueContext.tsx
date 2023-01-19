@@ -9,6 +9,7 @@ import schema from "../validations/calculateTransactionValidation";
 import {
   IHandleTransactionValuesProps,
   IProviderProps,
+  IResultValues,
   ITransactionValueValues,
 } from "./interfaces";
 
@@ -31,6 +32,8 @@ const TransactionValueProvider = ({ children }: IProviderProps) => {
     null
   );
 
+  const [result, setResult] = useState<IResultValues>({} as IResultValues);
+
   const handleTransactionValues = handleSubmit(
     (data: IHandleTransactionValuesProps) => {
       setValues({ ...data });
@@ -39,9 +42,9 @@ const TransactionValueProvider = ({ children }: IProviderProps) => {
 
   const reciveTransactionValues = (data: IHandleTransactionValuesProps) => {
     api
-      .post("", data)
+      .post<IResultValues>("", data)
       .then((res) => {
-        console.log(res.data);
+        setResult({ ...res.data });
         toast.success("Transação calculada!", {
           position: "top-right",
           autoClose: 2000,
@@ -80,7 +83,7 @@ const TransactionValueProvider = ({ children }: IProviderProps) => {
 
   return (
     <TransactionValueContext.Provider
-      value={{ register, handleTransactionValues, errors }}
+      value={{ register, handleTransactionValues, errors, result }}
     >
       {children}
     </TransactionValueContext.Provider>
