@@ -17,6 +17,7 @@
     "react-hook-form": "^7.42.1",
     "react-toastify": "^9.1.1",
     "styled-components": "^5.3.6",
+    "vercel": "^28.12.8",
     "yup": "^0.32.11"
   },
   "devDependencies": {
