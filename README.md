@@ -22,3 +22,7 @@ Hoje nossos clientes precisam saber quanto custa antecipar uma transação, e pa
 2- Instale todas as dependências necessárias com o comando `yarn` ou `yarn install`
 
 3- Por fim é só utilizar `yarn dev` para poder rodar a aplicação, em localhost com a porta 3000 ou outra disponivel, em seu navegador
+
+## Para ver o deploy do projeto 
+
+<a href="https://transactions-calculator.vercel.app/">Vercel</a>
