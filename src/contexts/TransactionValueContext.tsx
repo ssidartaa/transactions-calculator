@@ -28,18 +28,22 @@ const TransactionValueProvider = ({ children }: IProviderProps) => {
     shouldFocusError: false,
   });
 
+  // Variável para guardar os valores escritos nos inputs
   const [values, setValues] = useState<IHandleTransactionValuesProps | null>(
     null
   );
 
+  // Variável para guardar o resultado da requisição para a API
   const [result, setResult] = useState<IResultValues>({} as IResultValues);
 
+  // Função utilizada para guardar os valores escritos nos inputs para a variável values
   const handleTransactionValues = handleSubmit(
     (data: IHandleTransactionValuesProps) => {
       setValues({ ...data });
     }
   );
 
+  // Função utilizada para efetuar a requisição e atribuir o res à variável result
   const reciveTransactionValues = (data: IHandleTransactionValuesProps) => {
     api
       .post<IResultValues>("", data)
@@ -71,11 +75,13 @@ const TransactionValueProvider = ({ children }: IProviderProps) => {
       });
   };
 
+  // UseEffect usado para não ocorrer requisições a toda hora, ou duplicação de requisição
   useEffect(() => {
     const timeout = setTimeout(() => {
       if (values) reciveTransactionValues(values);
     }, 700);
 
+    // Caso aconteça a desconstrução vai ser zerado o timeout e reiniciar o processo até que não haja alterações no código
     return () => {
       clearTimeout(timeout);
     };
